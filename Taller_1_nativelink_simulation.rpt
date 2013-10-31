@@ -1,0 +1,148 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cycloneiii
+Quartus root          :  c:/altera/13.0sp1/quartus/bin64/
+Quartus sim root      :  c:/altera/13.0sp1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  Taller_1.vho
+Sim SDF file          :  Taller_1__vhdl.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/altera/13.0sp1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File Taller_1_run_msim_gate_vhdl.do already exists - backing up current file as Taller_1_run_msim_gate_vhdl.do.bak9
+Probing transcript
+ModelSim-Altera Info: # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+ModelSim-Altera Info: # do Taller_1_run_msim_gate_vhdl.do 
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {Taller_1.vho}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package dffeas_pack
+ModelSim-Altera Info: # -- Loading package altera_primitives_components
+ModelSim-Altera Info: # -- Loading package cycloneiii_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneiii_components
+ModelSim-Altera Info: # -- Compiling entity reloj
+ModelSim-Altera Info: # -- Compiling architecture structure of reloj
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: vsim work.reloj(structure)
+ModelSim-Altera Info: # vsim work.reloj(structure) 
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading altera.dffeas_pack
+ModelSim-Altera Info: # Loading altera.altera_primitives_components
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_components
+ModelSim-Altera Info: # Loading work.reloj(structure)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_obuf(arch)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_ena_reg(behave)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_ibuf(arch)
+ModelSim-Altera Warning: # ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
+ModelSim-Altera Info: # This may because you are loading cell libraries which are not recommended with
+ModelSim-Altera Info: # the ModelSim Altera version. Expect performance to be adversely affected.
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/reloj/HEX3 \
+ModelSim-Altera Info: sim:/reloj/HEX2 \
+ModelSim-Altera Info: sim:/reloj/HEX1 \
+ModelSim-Altera Info: sim:/reloj/HEX0 \
+ModelSim-Altera Info: sim:/reloj/CLOCK_50 \
+ModelSim-Altera Info: sim:/reloj/clk_out
+ModelSim-Altera Info: force -freeze sim:/reloj/CLOCK_50 1 0, 0 {5 ps} -r 10
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+ModelSim-Altera Info: run
+Info: NativeLink simulation flow was successful

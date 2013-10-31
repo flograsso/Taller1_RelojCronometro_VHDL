@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Oct 28 16:30:48 2013
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : Taller_1
+Top-level Entity Name : reloj
+Family : Cyclone III
+Device : EP3C16F484C6
+Timing Models : Final
+Total logic elements : 243 / 15,408 ( 2 % )
+    Total combinational functions : 237 / 15,408 ( 2 % )
+    Dedicated logic registers : 161 / 15,408 ( 1 % )
+Total registers : 194
+Total pins : 38 / 347 ( 11 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

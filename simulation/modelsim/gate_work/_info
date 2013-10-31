@@ -1,0 +1,52 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Fede\workspace\Quartus\Taller_1\simulation\modelsim
+Ereloj
+Z1 w1382988659
+Z2 DPx10 cycloneiii 20 cycloneiii_atom_pack 0 22 n^46VOjinLK5_01fgQc6Z0
+Z3 DPx10 cycloneiii 21 cycloneiii_components 0 22 VeH8af>S`B?U[[D6_Khe@0
+Z4 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z5 DPx6 altera 11 dffeas_pack 0 22 Giz7C_dB_=WZS^1=3P8073
+Z6 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z7 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z8 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 W]_:GkoiISnEn83KNb:3:2
+Z10 dC:\Users\Fede\workspace\Quartus\Taller_1\simulation\modelsim
+Z11 8Taller_1.vho
+Z12 FTaller_1.vho
+l0
+L36
+V7LLGO`GTU4=;_F?]e1BIN3
+!s100 mCX;;geXi5iH]cFKL<0o^2
+Z13 OV;C;10.1d;51
+31
+!i10b 1
+Z14 !s108 1382988669.371000
+Z15 !s90 -reportprogress|300|-93|-work|work|Taller_1.vho|
+Z16 !s107 Taller_1.vho|
+Z17 o-93 -work work -O0
+Z18 tExplicit 1
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 5 reloj 0 22 7LLGO`GTU4=;_F?]e1BIN3
+l592
+L92
+VlVL:YPa1_7YRcPeLej0aV0
+!s100 `LLQ;KjZ[[<;4cQW^oI6c0
+R13
+31
+!i10b 1
+R14
+R15
+R16
+R17
+R18
