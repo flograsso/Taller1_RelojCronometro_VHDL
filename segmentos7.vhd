@@ -1,0 +1,31 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY segmentos7 IS
+
+	PORT(
+			num: in integer;
+		  salida: out std_logic_vector(0 to 6)
+		);
+END segmentos7;
+
+ARCHITECTURE s7 OF segmentos7 IS
+	BEGIN
+		PROCESS(num)
+		BEGIN
+			CASE num IS
+				WHEN 0 => salida<="0000001";
+				WHEN 1 => salida<="1001111";
+				WHEN 2 => salida<="0010010";
+				WHEN 3 => salida<="0000110";
+				WHEN 4 => salida<="1001100";
+				WHEN 5 => salida<="0100100";
+				WHEN 6 => salida<="0100000";
+				WHEN 7 => salida<="0001111";
+				WHEN 8 => salida<="0000000";
+				WHEN 9 => salida<="0000100";
+				WHEN OTHERS=> salida<="1111111";
+			END CASE;
+		END PROCESS;
+END s7;

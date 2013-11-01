@@ -38,10 +38,10 @@ vsim work.reloj(structure)
 # Loading work.reloj(structure)
 # Loading cycloneiii.cycloneiii_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# Loading ieee.std_logic_arith(body)
-# Loading cycloneiii.cycloneiii_io_obuf(arch)
 # Loading cycloneiii.cycloneiii_clkctrl(vital_clkctrl)
 # Loading cycloneiii.cycloneiii_ena_reg(behave)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneiii.cycloneiii_io_obuf(arch)
 # Loading cycloneiii.cycloneiii_io_ibuf(arch)
 # ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
@@ -53,73 +53,10 @@ sim:/reloj/HEX1 \
 sim:/reloj/HEX0 \
 sim:/reloj/CLOCK_50 \
 sim:/reloj/clk_out
-force -freeze sim:/reloj/CLOCK_50 1 0, 0 {5 ps} -r 10
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+add wave -position insertpoint  \
+sim:/reloj/segundo \
+sim:/reloj/centesima \
+sim:/reloj/minuto \
+sim:/reloj/hora
+force -freeze sim:/reloj/CLOCK_50 1 0, 0 {50 ps} -r 100
 run
