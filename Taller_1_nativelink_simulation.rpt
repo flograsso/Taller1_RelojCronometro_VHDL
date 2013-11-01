@@ -18,7 +18,7 @@ Sim dir               :  simulation\modelsim
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script c:/altera/13.0sp1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File Taller_1_run_msim_gate_vhdl.do already exists - backing up current file as Taller_1_run_msim_gate_vhdl.do.bak9
+Warning: File Taller_1_run_msim_gate_vhdl.do already exists - backing up current file as Taller_1_run_msim_gate_vhdl.do.bak11
 Probing transcript
 ModelSim-Altera Info: # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
 ModelSim-Altera Info: # do Taller_1_run_msim_gate_vhdl.do 
@@ -60,10 +60,10 @@ ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_components
 ModelSim-Altera Info: # Loading work.reloj(structure)
 ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_lcell_comb(vital_lcell_comb)
 ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
-ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
-ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_obuf(arch)
 ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_clkctrl(vital_clkctrl)
 ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_ena_reg(behave)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_obuf(arch)
 ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_ibuf(arch)
 ModelSim-Altera Warning: # ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
 ModelSim-Altera Info: # This may because you are loading cell libraries which are not recommended with
@@ -75,69 +75,12 @@ ModelSim-Altera Info: sim:/reloj/HEX1 \
 ModelSim-Altera Info: sim:/reloj/HEX0 \
 ModelSim-Altera Info: sim:/reloj/CLOCK_50 \
 ModelSim-Altera Info: sim:/reloj/clk_out
-ModelSim-Altera Info: force -freeze sim:/reloj/CLOCK_50 1 0, 0 {5 ps} -r 10
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
-ModelSim-Altera Info: run
+ModelSim-Altera Info: add wave -position insertpoint  \
+ModelSim-Altera Info: sim:/reloj/segundo \
+ModelSim-Altera Info: sim:/reloj/hora \
+ModelSim-Altera Info: sim:/reloj/centesima \
+ModelSim-Altera Info: sim:/reloj/minuto
+ModelSim-Altera Info: force -freeze sim:/reloj/CLOCK_50 1 0, 0 {50 ps} -r 100
 ModelSim-Altera Info: run
 ModelSim-Altera Info: run
 ModelSim-Altera Info: run

@@ -1,0 +1,6 @@
+
+State Machine - |reloj|EA
+Name EA.S2 EA.S1 EA.INICIO 
+EA.INICIO 0 0 0 
+EA.S1 0 1 1 
+EA.S2 1 0 1 

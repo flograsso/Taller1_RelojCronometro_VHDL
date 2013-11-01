@@ -1,0 +1,31 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY 7segmentos IS
+
+	PORT(
+			num: in integer;
+		  salida: out std_logic_vector(6 downto 0)
+		);
+END 7segmentos;
+
+ARCHITECTURE 7s OF 7segmentos IS
+	BEGIN
+		PROCESS(num)
+		BEGIN
+			CASE num IS
+				WHEN 0 => num<="0000001";
+				WHEN 1 => num<="1001111";
+				WHEN 2 => num<="0010010";
+				WHEN 3 => num<="0000110";
+				WHEN 4 => num<="1001100";
+				WHEN 5 => num<="0100100";
+				WHEN 6 => num<="0100000";
+				WHEN 7 => num<="0001111";
+				WHEN 8 => num<="0000000";
+				WHEN 9 => num<="0000100";
+				WHEN OTHERS=> num<="1111111";
+			END CASE;
+		END PROCESS;
+END 7s;
