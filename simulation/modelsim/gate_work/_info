@@ -4,30 +4,31 @@ K3
 cModel Technology
 Z0 dC:\Users\Fede\workspace\Quartus\Taller_1\simulation\modelsim
 Ereloj
-Z1 w1383304425
-Z2 DPx10 cycloneiii 20 cycloneiii_atom_pack 0 22 n^46VOjinLK5_01fgQc6Z0
-Z3 DPx10 cycloneiii 21 cycloneiii_components 0 22 VeH8af>S`B?U[[D6_Khe@0
-Z4 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
-Z5 DPx6 altera 11 dffeas_pack 0 22 Giz7C_dB_=WZS^1=3P8073
-Z6 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
-Z7 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z8 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z9 DPx6 altera 28 altera_primitives_components 0 22 W]_:GkoiISnEn83KNb:3:2
-Z10 dC:\Users\Fede\workspace\Quartus\Taller_1\simulation\modelsim
-Z11 8Taller_1.vho
-Z12 FTaller_1.vho
+Z1 w1385995350
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx10 cycloneiii 20 cycloneiii_atom_pack 0 22 n^46VOjinLK5_01fgQc6Z0
+Z4 DPx10 cycloneiii 21 cycloneiii_components 0 22 VeH8af>S`B?U[[D6_Khe@0
+Z5 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z6 DPx6 altera 11 dffeas_pack 0 22 Giz7C_dB_=WZS^1=3P8073
+Z7 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z8 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z9 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z10 DPx6 altera 28 altera_primitives_components 0 22 W]_:GkoiISnEn83KNb:3:2
+Z11 dC:\Users\Fede\workspace\Quartus\Taller_1\simulation\modelsim
+Z12 8Taller_1.vho
+Z13 FTaller_1.vho
 l0
-L36
-V_g8SZ6lN@RkRXTY@ZXPN40
-!s100 V^aUkYJ9EB`5RQGHXfnMa3
-Z13 OV;C;10.1d;51
+L39
+V^@6e:GZYFKiD0Z:JIe1bG2
+!s100 c^I6mfM>d15M;mN@fMX0W0
+Z14 OV;C;10.1d;51
 31
 !i10b 1
-Z14 !s108 1383304438.216000
-Z15 !s90 -reportprogress|300|-93|-work|work|Taller_1.vho|
-Z16 !s107 Taller_1.vho|
-Z17 o-93 -work work -O0
-Z18 tExplicit 1
+Z15 !s108 1385995362.558000
+Z16 !s90 -reportprogress|300|-93|-work|work|Taller_1.vho|
+Z17 !s107 Taller_1.vho|
+Z18 o-93 -work work -O0
+Z19 tExplicit 1
 Astructure
 R2
 R3
@@ -37,16 +38,17 @@ R6
 R7
 R8
 R9
-DEx4 work 5 reloj 0 22 _g8SZ6lN@RkRXTY@ZXPN40
-l6584
-L92
-VeAXWG2nDfgnejY<L:kU@_3
-!s100 I;TK^e`f>0`UnHcYU_0Ok0
-R13
+R10
+DEx4 work 5 reloj 0 22 ^@6e:GZYFKiD0Z:JIe1bG2
+l1807
+L227
+V4[@:e``671?`]?2XkU:oj3
+!s100 9z4V:4T7[?g_HGOc@]dkZ2
+R14
 31
 !i10b 1
-R14
 R15
 R16
 R17
 R18
+R19

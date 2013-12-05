@@ -1,62 +1,31 @@
 # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
-# do Taller_1_run_msim_gate_vhdl.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
+# ERROR: No extended dataflow license exists
+# do Taller_1_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
 # }
-# vlib gate_work
-# vmap work gate_work
+# vlib rtl_work
+# vmap work rtl_work
 # Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {Taller_1.vho}
+# vcom -93 -work work {C:/Users/Fede/workspace/Quartus/Taller_1/Taller_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
-# -- Loading package cycloneiii_atom_pack
-# -- Loading package cycloneiii_components
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
 # -- Compiling entity reloj
-# -- Compiling architecture structure of reloj
-# 
-vsim work.reloj(structure)
-# vsim work.reloj(structure) 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading altera.dffeas_pack
-# Loading altera.altera_primitives_components
-# Loading cycloneiii.cycloneiii_atom_pack(body)
-# Loading cycloneiii.cycloneiii_components
-# Loading work.reloj(structure)
-# Loading cycloneiii.cycloneiii_lcell_comb(vital_lcell_comb)
-# Loading altera.dffeas(vital_dffeas)
-# Loading cycloneiii.cycloneiii_clkctrl(vital_clkctrl)
-# Loading cycloneiii.cycloneiii_ena_reg(behave)
-# Loading ieee.std_logic_arith(body)
-# Loading cycloneiii.cycloneiii_io_obuf(arch)
-# Loading cycloneiii.cycloneiii_io_ibuf(arch)
-# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
-# This may because you are loading cell libraries which are not recommended with
-# the ModelSim Altera version. Expect performance to be adversely affected.
-add wave -position insertpoint  \
-sim:/reloj/HEX3 \
-sim:/reloj/HEX2 \
-sim:/reloj/HEX1 \
-sim:/reloj/HEX0 \
-sim:/reloj/CLOCK_50 \
-sim:/reloj/clk_out
-add wave -position insertpoint  \
-sim:/reloj/segundo \
-sim:/reloj/centesima \
-sim:/reloj/minuto \
-sim:/reloj/hora
-force -freeze sim:/reloj/CLOCK_50 1 0, 0 {50 ps} -r 100
-run
+# -- Compiling architecture implementation of reloj
+# vcom -93 -work work {C:/Users/Fede/workspace/Quartus/Taller_1/segmentos7.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity segmentos7
+# -- Compiling architecture s7 of segmentos7

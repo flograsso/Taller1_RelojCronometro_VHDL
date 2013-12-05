@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Taller_1
-Fri Nov 01 08:12:45 2013
+Tue Dec 03 13:43:58 2013
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,18 +13,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |reloj|EA
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  8. State Machine - |reloj|ESTADO_CRON
+  9. State Machine - |reloj|EA
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -50,16 +47,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 01 08:12:45 2013           ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 03 13:43:58 2013           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Taller_1                                        ;
 ; Top-level Entity Name              ; reloj                                           ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 4,813                                           ;
-;     Total combinational functions  ; 4,813                                           ;
-;     Dedicated logic registers      ; 161                                             ;
-; Total registers                    ; 161                                             ;
-; Total pins                         ; 38                                              ;
+; Total logic elements               ; 961                                             ;
+;     Total combinational functions  ; 961                                             ;
+;     Dedicated logic registers      ; 422                                             ;
+; Total registers                    ; 422                                             ;
+; Total pins                         ; 175                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -165,90 +162,70 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
-; Taller_1.vhd                     ; yes             ; User VHDL File               ; C:/Users/Fede/workspace/Quartus/Taller_1/Taller_1.vhd                 ;         ;
-; segmentos7.vhd                   ; yes             ; User VHDL File               ; C:/Users/Fede/workspace/Quartus/Taller_1/segmentos7.vhd               ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc      ;         ;
-; db/lpm_divide_gvo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/lpm_divide_gvo.tdf        ;         ;
-; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/abs_divider_kbg.tdf       ;         ;
-; db/alt_u_div_t5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/alt_u_div_t5f.tdf         ;         ;
-; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/add_sub_unc.tdf           ;         ;
-; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/add_sub_vnc.tdf           ;         ;
-; db/lpm_abs_pt9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/lpm_abs_pt9.tdf           ;         ;
-; db/lpm_abs_9v9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/lpm_abs_9v9.tdf           ;         ;
-; db/lpm_divide_cbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/lpm_divide_cbm.tdf        ;         ;
-; db/sign_div_unsign_anh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/sign_div_unsign_anh.tdf   ;         ;
-; db/alt_u_div_v8f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Fede/workspace/Quartus/Taller_1/db/alt_u_div_v8f.tdf         ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; Taller_1.vhd                     ; yes             ; User VHDL File  ; C:/Users/Fede/workspace/Quartus/Taller_1/Taller_1.vhd   ;         ;
+; segmentos7.vhd                   ; yes             ; User VHDL File  ; C:/Users/Fede/workspace/Quartus/Taller_1/segmentos7.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 4,813         ;
-;                                             ;               ;
-; Total combinational functions               ; 4813          ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 1481          ;
-;     -- 3 input functions                    ; 1489          ;
-;     -- <=2 input functions                  ; 1843          ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 3146          ;
-;     -- arithmetic mode                      ; 1667          ;
-;                                             ;               ;
-; Total registers                             ; 161           ;
-;     -- Dedicated logic registers            ; 161           ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 38            ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-; Maximum fan-out node                        ; centesima[31] ;
-; Maximum fan-out                             ; 174           ;
-; Total fan-out                               ; 14312         ;
-; Average fan-out                             ; 2.83          ;
-+---------------------------------------------+---------------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 961      ;
+;                                             ;          ;
+; Total combinational functions               ; 961      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 422      ;
+;     -- 3 input functions                    ; 84       ;
+;     -- <=2 input functions                  ; 455      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 558      ;
+;     -- arithmetic mode                      ; 403      ;
+;                                             ;          ;
+; Total registers                             ; 422      ;
+;     -- Dedicated logic registers            ; 422      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 175      ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_MS ;
+; Maximum fan-out                             ; 388      ;
+; Total fan-out                               ; 4268     ;
+; Average fan-out                             ; 2.46     ;
++---------------------------------------------+----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Library Name ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |reloj                                 ; 4813 (380)        ; 161 (161)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |reloj                                                                                                 ; work         ;
-;    |lpm_divide:Div0|                   ; 516 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div0                                                                                 ; work         ;
-;       |lpm_divide_gvo:auto_generated|  ; 516 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div0|lpm_divide_gvo:auto_generated                                                   ; work         ;
-;          |abs_divider_kbg:divider|     ; 516 (36)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div0|lpm_divide_gvo:auto_generated|abs_divider_kbg:divider                           ; work         ;
-;             |alt_u_div_t5f:divider|    ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div0|lpm_divide_gvo:auto_generated|abs_divider_kbg:divider|alt_u_div_t5f:divider     ; work         ;
-;             |lpm_abs_9v9:my_abs_num|   ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div0|lpm_divide_gvo:auto_generated|abs_divider_kbg:divider|lpm_abs_9v9:my_abs_num    ; work         ;
-;    |lpm_divide:Div1|                   ; 516 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div1                                                                                 ; work         ;
-;       |lpm_divide_gvo:auto_generated|  ; 516 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div1|lpm_divide_gvo:auto_generated                                                   ; work         ;
-;          |abs_divider_kbg:divider|     ; 516 (36)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div1|lpm_divide_gvo:auto_generated|abs_divider_kbg:divider                           ; work         ;
-;             |alt_u_div_t5f:divider|    ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div1|lpm_divide_gvo:auto_generated|abs_divider_kbg:divider|alt_u_div_t5f:divider     ; work         ;
-;             |lpm_abs_9v9:my_abs_num|   ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Div1|lpm_divide_gvo:auto_generated|abs_divider_kbg:divider|lpm_abs_9v9:my_abs_num    ; work         ;
-;    |lpm_divide:Mod0|                   ; 1617 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod0                                                                                 ; work         ;
-;       |lpm_divide_cbm:auto_generated|  ; 1617 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod0|lpm_divide_cbm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_anh:divider| ; 1617 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod0|lpm_divide_cbm:auto_generated|sign_div_unsign_anh:divider                       ; work         ;
-;             |alt_u_div_v8f:divider|    ; 1617 (1617)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod0|lpm_divide_cbm:auto_generated|sign_div_unsign_anh:divider|alt_u_div_v8f:divider ; work         ;
-;    |lpm_divide:Mod1|                   ; 1617 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod1                                                                                 ; work         ;
-;       |lpm_divide_cbm:auto_generated|  ; 1617 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod1|lpm_divide_cbm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_anh:divider| ; 1617 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod1|lpm_divide_cbm:auto_generated|sign_div_unsign_anh:divider                       ; work         ;
-;             |alt_u_div_v8f:divider|    ; 1617 (1617)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|lpm_divide:Mod1|lpm_divide_cbm:auto_generated|sign_div_unsign_anh:divider|alt_u_div_v8f:divider ; work         ;
-;    |segmentos7:D1|                     ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D1                                                                                   ; work         ;
-;    |segmentos7:D2|                     ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D2                                                                                   ; work         ;
-;    |segmentos7:D3|                     ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D3                                                                                   ; work         ;
-;    |segmentos7:D4|                     ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D4                                                                                   ; work         ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                          ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
+; |reloj                     ; 961 (793)         ; 422 (422)    ; 0           ; 0            ; 0       ; 0         ; 175  ; 0            ; |reloj               ; work         ;
+;    |segmentos7:D1|         ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D1 ; work         ;
+;    |segmentos7:D2|         ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D2 ; work         ;
+;    |segmentos7:D3|         ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D3 ; work         ;
+;    |segmentos7:D4|         ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |reloj|segmentos7:D4 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |reloj|ESTADO_CRON                                          ;
++-------------------+-------------------+-------------------+-----------------+
+; Name              ; ESTADO_CRON.RESET ; ESTADO_CRON.PAUSE ; ESTADO_CRON.RUN ;
++-------------------+-------------------+-------------------+-----------------+
+; ESTADO_CRON.RUN   ; 0                 ; 0                 ; 0               ;
+; ESTADO_CRON.PAUSE ; 0                 ; 1                 ; 1               ;
+; ESTADO_CRON.RESET ; 1                 ; 0                 ; 1               ;
++-------------------+-------------------+-------------------+-----------------+
 
 
 Encoding Type:  One-Hot
@@ -263,25 +240,25 @@ Encoding Type:  One-Hot
 +-----------+-------+-------+-----------+
 
 
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; estado[0]$latch                                    ; EA.S1               ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +------------------------------------------------------------+
 ; Registers Removed During Synthesis                         ;
 +---------------------------------------+--------------------+
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
-; EA.S1                                 ; Lost fanout        ;
-; EA.S2                                 ; Lost fanout        ;
 ; EA.INICIO                             ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
+; Total Number of Removed Registers = 1 ;                    ;
 +---------------------------------------+--------------------+
-
-
-+-----------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                 ;
-+---------------+--------------------+----------------------------------------+
-; Register name ; Reason for Removal ; Registers Removed due to This Register ;
-+---------------+--------------------+----------------------------------------+
-; EA.S1         ; Lost Fanouts       ; EA.INICIO                              ;
-+---------------+--------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -289,12 +266,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 161   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 422   ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Clock Enable       ; 352   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -314,100 +291,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |reloj|ES.INICIO           ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |reloj|U_MM[16]            ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |reloj|D_MM[10]            ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |reloj|U_HH[15]            ;
+; 14:1               ; 32 bits   ; 288 LEs       ; 32 LEs               ; 256 LEs                ; Yes        ; |reloj|D_HH[8]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |reloj|D_CC_CRON           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |reloj|U_SS_CRON           ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |reloj|D_SS_CRON           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |reloj|ESTADO_CRON         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                ;
-; LPM_WIDTHD             ; 5              ; Untyped                ;
-; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
-; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_gvo ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                ;
-; LPM_WIDTHD             ; 5              ; Untyped                ;
-; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
-; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_gvo ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 33             ; Untyped                ;
-; LPM_WIDTHD             ; 32             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_cbm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 33             ; Untyped                ;
-; LPM_WIDTHD             ; 32             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_cbm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -415,7 +307,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:13     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -425,7 +317,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Nov 01 08:12:28 2013
+    Info: Processing started: Tue Dec 03 13:43:48 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Taller_1 -c Taller_1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file taller_1.vhd
@@ -436,80 +328,211 @@ Info (12021): Found 2 design units, including 1 entities, in source file segment
     Info (12022): Found design unit 1: segmentos7-s7
     Info (12023): Found entity 1: segmentos7
 Info (12127): Elaborating entity "reloj" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Taller_1.vhd(49): object "boton1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Taller_1.vhd(49): object "boton2" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(78): signal "CLOCK_10" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(110): signal "minuto" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(111): signal "hora" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(112): signal "minuto" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(114): signal "minuto" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(117): signal "centesima" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(118): signal "centesima" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(119): signal "centesima" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Taller_1.vhd(121): signal "centesima" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10541): VHDL Signal Declaration warning at Taller_1.vhd(29): used implicit default value for signal "U_S1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Taller_1.vhd(29): used implicit default value for signal "D_S1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Taller_1.vhd(29): used implicit default value for signal "U_M1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at Taller_1.vhd(63): used explicit default value for signal "aux" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(292): signal "D_HH" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(293): signal "U_HH" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(294): signal "D_MM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(295): signal "U_MM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(310): signal "D_HH" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(311): signal "U_HH" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(312): signal "D_MM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(313): signal "U_MM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(325): signal "D_SS_CRON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(326): signal "U_SS_CRON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(327): signal "D_CC_CRON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Taller_1.vhd(328): signal "U_CC_CRON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Taller_1.vhd(283): inferring latch(es) for signal or variable "estado", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "estado[0]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[1]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[2]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[3]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[4]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[5]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[6]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[7]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[8]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[9]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[10]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[11]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[12]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[13]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[14]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[15]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[16]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[17]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[18]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[19]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[20]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[21]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[22]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[23]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[24]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[25]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[26]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[27]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[28]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[29]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[30]" at Taller_1.vhd(283)
+Info (10041): Inferred latch for "estado[31]" at Taller_1.vhd(283)
 Info (12128): Elaborating entity "segmentos7" for hierarchy "segmentos7:D1"
-Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0"
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "32"
-    Info (12134): Parameter "LPM_WIDTHD" = "5"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gvo.tdf
-    Info (12023): Found entity 1: lpm_divide_gvo
-Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
-    Info (12023): Found entity 1: abs_divider_kbg
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_t5f.tdf
-    Info (12023): Found entity 1: alt_u_div_t5f
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
-    Info (12023): Found entity 1: add_sub_unc
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
-    Info (12023): Found entity 1: add_sub_vnc
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_pt9.tdf
-    Info (12023): Found entity 1: lpm_abs_pt9
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_9v9.tdf
-    Info (12023): Found entity 1: lpm_abs_9v9
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "33"
-    Info (12134): Parameter "LPM_WIDTHD" = "32"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cbm.tdf
-    Info (12023): Found entity 1: lpm_divide_cbm
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_anh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_anh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_v8f.tdf
-    Info (12023): Found entity 1: alt_u_div_v8f
-Info (13014): Ignored 62 buffer(s)
-    Info (13016): Ignored 62 CARRY_SUM buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3[7]" is stuck at VCC
     Warning (13410): Pin "HEX2[7]" is stuck at VCC
     Warning (13410): Pin "HEX1[7]" is stuck at VCC
     Warning (13410): Pin "HEX0[7]" is stuck at VCC
+    Warning (13410): Pin "U_S1[0]" is stuck at VCC
+    Warning (13410): Pin "U_S1[1]" is stuck at GND
+    Warning (13410): Pin "U_S1[2]" is stuck at GND
+    Warning (13410): Pin "U_S1[3]" is stuck at GND
+    Warning (13410): Pin "U_S1[4]" is stuck at GND
+    Warning (13410): Pin "U_S1[5]" is stuck at GND
+    Warning (13410): Pin "U_S1[6]" is stuck at GND
+    Warning (13410): Pin "U_S1[7]" is stuck at GND
+    Warning (13410): Pin "U_S1[8]" is stuck at GND
+    Warning (13410): Pin "U_S1[9]" is stuck at GND
+    Warning (13410): Pin "U_S1[10]" is stuck at GND
+    Warning (13410): Pin "U_S1[11]" is stuck at GND
+    Warning (13410): Pin "U_S1[12]" is stuck at GND
+    Warning (13410): Pin "U_S1[13]" is stuck at GND
+    Warning (13410): Pin "U_S1[14]" is stuck at GND
+    Warning (13410): Pin "U_S1[15]" is stuck at GND
+    Warning (13410): Pin "U_S1[16]" is stuck at GND
+    Warning (13410): Pin "U_S1[17]" is stuck at GND
+    Warning (13410): Pin "U_S1[18]" is stuck at GND
+    Warning (13410): Pin "U_S1[19]" is stuck at GND
+    Warning (13410): Pin "U_S1[20]" is stuck at GND
+    Warning (13410): Pin "U_S1[21]" is stuck at GND
+    Warning (13410): Pin "U_S1[22]" is stuck at GND
+    Warning (13410): Pin "U_S1[23]" is stuck at GND
+    Warning (13410): Pin "U_S1[24]" is stuck at GND
+    Warning (13410): Pin "U_S1[25]" is stuck at GND
+    Warning (13410): Pin "U_S1[26]" is stuck at GND
+    Warning (13410): Pin "U_S1[27]" is stuck at GND
+    Warning (13410): Pin "U_S1[28]" is stuck at GND
+    Warning (13410): Pin "U_S1[29]" is stuck at GND
+    Warning (13410): Pin "U_S1[30]" is stuck at GND
+    Warning (13410): Pin "U_S1[31]" is stuck at VCC
+    Warning (13410): Pin "D_S1[0]" is stuck at VCC
+    Warning (13410): Pin "D_S1[1]" is stuck at GND
+    Warning (13410): Pin "D_S1[2]" is stuck at GND
+    Warning (13410): Pin "D_S1[3]" is stuck at GND
+    Warning (13410): Pin "D_S1[4]" is stuck at GND
+    Warning (13410): Pin "D_S1[5]" is stuck at GND
+    Warning (13410): Pin "D_S1[6]" is stuck at GND
+    Warning (13410): Pin "D_S1[7]" is stuck at GND
+    Warning (13410): Pin "D_S1[8]" is stuck at GND
+    Warning (13410): Pin "D_S1[9]" is stuck at GND
+    Warning (13410): Pin "D_S1[10]" is stuck at GND
+    Warning (13410): Pin "D_S1[11]" is stuck at GND
+    Warning (13410): Pin "D_S1[12]" is stuck at GND
+    Warning (13410): Pin "D_S1[13]" is stuck at GND
+    Warning (13410): Pin "D_S1[14]" is stuck at GND
+    Warning (13410): Pin "D_S1[15]" is stuck at GND
+    Warning (13410): Pin "D_S1[16]" is stuck at GND
+    Warning (13410): Pin "D_S1[17]" is stuck at GND
+    Warning (13410): Pin "D_S1[18]" is stuck at GND
+    Warning (13410): Pin "D_S1[19]" is stuck at GND
+    Warning (13410): Pin "D_S1[20]" is stuck at GND
+    Warning (13410): Pin "D_S1[21]" is stuck at GND
+    Warning (13410): Pin "D_S1[22]" is stuck at GND
+    Warning (13410): Pin "D_S1[23]" is stuck at GND
+    Warning (13410): Pin "D_S1[24]" is stuck at GND
+    Warning (13410): Pin "D_S1[25]" is stuck at GND
+    Warning (13410): Pin "D_S1[26]" is stuck at GND
+    Warning (13410): Pin "D_S1[27]" is stuck at GND
+    Warning (13410): Pin "D_S1[28]" is stuck at GND
+    Warning (13410): Pin "D_S1[29]" is stuck at GND
+    Warning (13410): Pin "D_S1[30]" is stuck at GND
+    Warning (13410): Pin "D_S1[31]" is stuck at VCC
+    Warning (13410): Pin "U_M1[0]" is stuck at VCC
+    Warning (13410): Pin "U_M1[1]" is stuck at GND
+    Warning (13410): Pin "U_M1[2]" is stuck at GND
+    Warning (13410): Pin "U_M1[3]" is stuck at GND
+    Warning (13410): Pin "U_M1[4]" is stuck at GND
+    Warning (13410): Pin "U_M1[5]" is stuck at GND
+    Warning (13410): Pin "U_M1[6]" is stuck at GND
+    Warning (13410): Pin "U_M1[7]" is stuck at GND
+    Warning (13410): Pin "U_M1[8]" is stuck at GND
+    Warning (13410): Pin "U_M1[9]" is stuck at GND
+    Warning (13410): Pin "U_M1[10]" is stuck at GND
+    Warning (13410): Pin "U_M1[11]" is stuck at GND
+    Warning (13410): Pin "U_M1[12]" is stuck at GND
+    Warning (13410): Pin "U_M1[13]" is stuck at GND
+    Warning (13410): Pin "U_M1[14]" is stuck at GND
+    Warning (13410): Pin "U_M1[15]" is stuck at GND
+    Warning (13410): Pin "U_M1[16]" is stuck at GND
+    Warning (13410): Pin "U_M1[17]" is stuck at GND
+    Warning (13410): Pin "U_M1[18]" is stuck at GND
+    Warning (13410): Pin "U_M1[19]" is stuck at GND
+    Warning (13410): Pin "U_M1[20]" is stuck at GND
+    Warning (13410): Pin "U_M1[21]" is stuck at GND
+    Warning (13410): Pin "U_M1[22]" is stuck at GND
+    Warning (13410): Pin "U_M1[23]" is stuck at GND
+    Warning (13410): Pin "U_M1[24]" is stuck at GND
+    Warning (13410): Pin "U_M1[25]" is stuck at GND
+    Warning (13410): Pin "U_M1[26]" is stuck at GND
+    Warning (13410): Pin "U_M1[27]" is stuck at GND
+    Warning (13410): Pin "U_M1[28]" is stuck at GND
+    Warning (13410): Pin "U_M1[29]" is stuck at GND
+    Warning (13410): Pin "U_M1[30]" is stuck at GND
+    Warning (13410): Pin "U_M1[31]" is stuck at VCC
+    Warning (13410): Pin "estado[1]" is stuck at GND
+    Warning (13410): Pin "estado[2]" is stuck at GND
+    Warning (13410): Pin "estado[3]" is stuck at GND
+    Warning (13410): Pin "estado[4]" is stuck at GND
+    Warning (13410): Pin "estado[5]" is stuck at GND
+    Warning (13410): Pin "estado[6]" is stuck at GND
+    Warning (13410): Pin "estado[7]" is stuck at GND
+    Warning (13410): Pin "estado[8]" is stuck at GND
+    Warning (13410): Pin "estado[9]" is stuck at GND
+    Warning (13410): Pin "estado[10]" is stuck at GND
+    Warning (13410): Pin "estado[11]" is stuck at GND
+    Warning (13410): Pin "estado[12]" is stuck at GND
+    Warning (13410): Pin "estado[13]" is stuck at GND
+    Warning (13410): Pin "estado[14]" is stuck at GND
+    Warning (13410): Pin "estado[15]" is stuck at GND
+    Warning (13410): Pin "estado[16]" is stuck at GND
+    Warning (13410): Pin "estado[17]" is stuck at GND
+    Warning (13410): Pin "estado[18]" is stuck at GND
+    Warning (13410): Pin "estado[19]" is stuck at GND
+    Warning (13410): Pin "estado[20]" is stuck at GND
+    Warning (13410): Pin "estado[21]" is stuck at GND
+    Warning (13410): Pin "estado[22]" is stuck at GND
+    Warning (13410): Pin "estado[23]" is stuck at GND
+    Warning (13410): Pin "estado[24]" is stuck at GND
+    Warning (13410): Pin "estado[25]" is stuck at GND
+    Warning (13410): Pin "estado[26]" is stuck at GND
+    Warning (13410): Pin "estado[27]" is stuck at GND
+    Warning (13410): Pin "estado[28]" is stuck at GND
+    Warning (13410): Pin "estado[29]" is stuck at GND
+    Warning (13410): Pin "estado[30]" is stuck at GND
+    Warning (13410): Pin "estado[31]" is stuck at GND
+    Warning (13410): Pin "clk_out" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY1"
-    Warning (15610): No output dependent on input pin "KEY2"
-    Warning (15610): No output dependent on input pin "SW1"
-    Warning (15610): No output dependent on input pin "SW0"
-Info (21057): Implemented 4851 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 4813 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 526 megabytes
-    Info: Processing ended: Fri Nov 01 08:12:45 2013
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:17
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+Info (21057): Implemented 1136 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 161 output pins
+    Info (21061): Implemented 961 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 162 warnings
+    Info: Peak virtual memory: 482 megabytes
+    Info: Processing ended: Tue Dec 03 13:43:58 2013
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:07
 
 
