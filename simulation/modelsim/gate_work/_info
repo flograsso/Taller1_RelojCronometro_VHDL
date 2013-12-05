@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dC:\Users\Fede\workspace\Quartus\Taller_1\simulation\modelsim
 Ereloj
-Z1 w1385995350
+Z1 w1386213657
 Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z3 DPx10 cycloneiii 20 cycloneiii_atom_pack 0 22 n^46VOjinLK5_01fgQc6Z0
 Z4 DPx10 cycloneiii 21 cycloneiii_components 0 22 VeH8af>S`B?U[[D6_Khe@0
@@ -19,12 +19,12 @@ Z12 8Taller_1.vho
 Z13 FTaller_1.vho
 l0
 L39
-V^@6e:GZYFKiD0Z:JIe1bG2
-!s100 c^I6mfM>d15M;mN@fMX0W0
+VYD5keQ[5aALGaIbNfDXoR2
+!s100 MAfje:FVRNhUDk?>3H;?]3
 Z14 OV;C;10.1d;51
 31
 !i10b 1
-Z15 !s108 1385995362.558000
+Z15 !s108 1386213668.014000
 Z16 !s90 -reportprogress|300|-93|-work|work|Taller_1.vho|
 Z17 !s107 Taller_1.vho|
 Z18 o-93 -work work -O0
@@ -39,11 +39,11 @@ R7
 R8
 R9
 R10
-DEx4 work 5 reloj 0 22 ^@6e:GZYFKiD0Z:JIe1bG2
-l1807
-L227
-V4[@:e``671?`]?2XkU:oj3
-!s100 9z4V:4T7[?g_HGOc@]dkZ2
+DEx4 work 5 reloj 0 22 YD5keQ[5aALGaIbNfDXoR2
+l1892
+L265
+VoQFCd>z0SV9YVJXHBPVd?0
+!s100 mSi@gj?B`W4R61?lA_3492
 R14
 31
 !i10b 1

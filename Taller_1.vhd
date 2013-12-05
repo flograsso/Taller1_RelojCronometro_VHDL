@@ -28,7 +28,7 @@ entity reloj is
 		
 		U_S1,D_S1,U_M1,estado : out integer;
 		
-		clk_out :out std_logic
+		clk_out :out integer
 		
 		);
 end entity reloj;
@@ -59,7 +59,7 @@ architecture implementation of reloj is
 								
 	signal EA 	:TIPO_ESTADO := INICIO; 
 	signal ES	:TIPO_ESTADO:=INICIO;
-	signal ESTADO_CRON : TIPO_ESTADO_CRON := RESET;
+	signal ESTADO_CRON : TIPO_ESTADO_CRON :=PAUSE;
 	signal aux,aux2,aux3,aux4 : std_logic:='0';
 	signal CLOCK_MS,CLOCK_10 		: std_logic := '0';
 	
@@ -70,6 +70,8 @@ signal sumaD_S,sumaU_M,sumaD_M,sumaU_H,sumaD_H	: std_logic := '0';
 	signal primerDig,segundoDig,tercerDig,cuartoDig	: integer :=0;
 	signal stop				: integer := 0;--Para parar el reloj
 	signal count	: integer := 1;
+	
+	signal estadoBT1,estadoBT2: std_logic := '0';
 	
 
 	
@@ -87,7 +89,7 @@ begin
 	boton1 <= KEY(0);
 	boton2 <= KEY(1);
 	
-	clk_out<=aux;
+
 	
 	
 		
@@ -109,19 +111,28 @@ end process CLK1;
 
 		
 		
-CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
+CLK: process (CLOCK_MS) --boton2 y boton1 son entradas asincronas
 
 
 	begin
 	
+
 	
 		if(rising_edge(CLOCK_MS)) then
+		
+		--Si voy al modo hora para el cronometro
+		if (EA/=S1) then
+			ESTADO_CRON<=PAUSE;
+		end if;
+		
 			
 			if (EA = S1) then
-			if (boton1 = '0') then
+			if (boton1 = '0') and (estadoBT1 = '0') then
 				ESTADO_CRON <= RESET;
+				estadoBT1 <= '1';
 			else
-				if (boton2 = '0') then
+				if (boton2 = '0') and (estadoBT2 = '0') then
+					estadoBT2<='1';
 					if (ESTADO_CRON = PAUSE) then
 						ESTADO_CRON <= RUN;
 					else
@@ -135,7 +146,7 @@ CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
 			case ESTADO_CRON is
 				
 				WHEN RESET =>
-					
+					clk_out<=0;
 					U_CC_CRON<=0;
 					D_CC_CRON<=0;
 					U_SS_CRON<=0;
@@ -143,6 +154,7 @@ CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
 					ESTADO_CRON <= PAUSE;
 					
 				WHEN RUN =>
+					clk_out<=1;
 					U_CC_CRON<=U_CC_CRON+1;
 					if (U_CC_CRON = 9) then
 					U_CC_CRON<=0;
@@ -160,9 +172,15 @@ CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
 						end if;
 					end if;	
 					
-				WHEN PAUSE=>
+				WHEN PAUSE => 
+								clk_out<=2;
+								U_CC_CRON<=U_CC_CRON;
+								D_CC_CRON<=D_CC_CRON;
+								U_SS_CRON<=U_SS_CRON;
+								D_SS_CRON<=D_SS_CRON;
 					
 				WHEN OTHERS =>
+					clk_out<=3;
 					U_CC_CRON<=U_CC_CRON+1;
 					if (U_CC_CRON = 9) then
 					U_CC_CRON<=0;
@@ -184,7 +202,13 @@ CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
 				
 		end if;
 		
+		if (boton1 = '1') then
+			estadoBT1<='0';
+		end if;
 		
+		if (boton2 = '1') then
+			estadoBT2<='0';
+		end if;
 			--Actualizo la hora
 			U_CC<=U_CC+1;
 			if (U_CC = 9) then
@@ -226,7 +250,8 @@ CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
 		
 		
 		--Boton aumenta minuto
-		if ((EA = S2) and (boton1 = '0')) then
+		if ((EA = S2) and (boton1 = '0') and  (estadoBT1='0')) then
+			estadoBT1<='1';
 			--Primero pregunto x distinto de 9??
 			U_MM<=U_MM+1;
 			if (U_MM = 9) then
@@ -252,7 +277,8 @@ CLK: process (CLOCK_MS,boton2,boton1) --boton2 y boton1 son entradas asincronas
 		--End aumenta minuto	
 		
 		--Boton aumentar hora
-		if ((EA = S2) and (boton2 = '0')) then
+		if ((EA = S2) and (boton2 = '0') and (estadoBT2='0')) then
+			estadoBT2<='1';
 			U_HH<=U_HH+1;
 			if (D_HH = 2) then
 				if (U_HH = 3) then

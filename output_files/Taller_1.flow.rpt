@@ -1,5 +1,5 @@
 Flow report for Taller_1
-Tue Dec 03 13:44:51 2013
+Thu Dec 05 12:15:55 2013
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 03 13:44:43 2013           ;
+; Flow Status                        ; Successful - Thu Dec 05 12:15:42 2013           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Taller_1                                        ;
 ; Top-level Entity Name              ; reloj                                           ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 967 / 15,408 ( 6 % )                            ;
-;     Total combinational functions  ; 961 / 15,408 ( 6 % )                            ;
-;     Dedicated logic registers      ; 422 / 15,408 ( 3 % )                            ;
-; Total registers                    ; 422                                             ;
-; Total pins                         ; 175 / 347 ( 50 % )                              ;
+; Total logic elements               ; 986 / 15,408 ( 6 % )                            ;
+;     Total combinational functions  ; 974 / 15,408 ( 6 % )                            ;
+;     Dedicated logic registers      ; 424 / 15,408 ( 3 % )                            ;
+; Total registers                    ; 427                                             ;
+; Total pins                         ; 206 / 347 ( 59 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                 ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/03/2013 13:43:49 ;
+; Start date & time ; 12/05/2013 12:14:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Taller_1            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 246473190709426.138608902906100       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 246473190709426.138625645904544       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; None                                  ; --            ; --          ; eda_simulation ;
 ; EDA_RUN_TOOL_AUTOMATICALLY          ; Off                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -96,11 +96,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 482 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:00:32     ; 1.0                     ; 697 MB              ; 00:00:25                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 413 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 460 MB              ; 00:00:05                           ;
-; Total                     ; 00:00:47     ; --                      ; --                  ; 00:00:39                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 479 MB              ; 00:00:15                           ;
+; Fitter                    ; 00:00:58     ; 1.0                     ; 701 MB              ; 00:00:56                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 406 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.0                     ; 448 MB              ; 00:00:11                           ;
+; Total                     ; 00:01:28     ; --                      ; --                  ; 00:01:27                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
