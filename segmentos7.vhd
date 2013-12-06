@@ -5,8 +5,8 @@ USE ieee.numeric_std.all;
 ENTITY segmentos7 IS
 
 	PORT(
-			num: in integer;
-		  salida: out std_logic_vector(0 to 6)
+		num: in integer;
+		salida: out std_logic_vector(0 to 6)
 		);
 END segmentos7;
 
