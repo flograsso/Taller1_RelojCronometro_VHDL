@@ -7,7 +7,7 @@ USE ieee.numeric_std.all;
 ENTITY reloj IS
 
 	PORT(
-		--4 display 7 SegmenTOs
+		--4 display 7 Segmentos
 		HEX3 	:OUT std_logic_vecTOr(0 TO 7); --Numero mas significativo
 		HEX2 	:OUT std_logic_vecTOr(0 TO 7);
 		HEX1 	:OUT std_logic_vecTOr(0 TO 7);
@@ -193,12 +193,12 @@ CLK: PROCESS (CLOCK_CT)
 				
 			END IF;
 		
-			--Si se suelta el boton1 lo habiliTO para que se pulse de nuevo
+			--Si se suelta el boton1 lo habilito para que se pulse de nuevo
 			IF (boton1 = '1') THEN
 				estadoBT1<='0';
 			END IF;
 		
-			--Si se suelta el boton2 lo habiliTO para que se pulse de nuevo
+			--Si se suelta el boton2 lo habilito para que se pulse de nuevo
 			IF (boton2 = '1') THEN
 				estadoBT2<='0';
 			END IF;
@@ -293,8 +293,8 @@ CLK: PROCESS (CLOCK_CT)
 END PROCESS CLK;
 	
 				
---MaquINa de  Estados		
-COM: PROCESS (EA,switch0,switch1,boton2,boton1)	
+--Maquina de  Estados		
+COM: PROCESS (EA,switch0,switch1)	
 	BEGIN
 		CASE EA IS
 		
@@ -308,7 +308,7 @@ COM: PROCESS (EA,switch0,switch1,boton2,boton1)
 						
 						IF (switch0 = '1') THEN --Si Switch0 se pone en 1 --> Modo cronometro (Le doy prioridad a este modo antes del setear hora)
 							ES <= S1;
-						ELSE --SINo el Switch0 esta en 0 --> Modo Hora
+						ELSE --Sino el Switch0 esta en 0 --> Modo Hora
 							IF (switch1 = '1') THEN --Si el Swtich1 esta en 1 -->Modo Setear Hora
 								ES <= S2;
 							ELSE --Si el Swtich1 esta en 0 -->Modo Mostrar Hora
